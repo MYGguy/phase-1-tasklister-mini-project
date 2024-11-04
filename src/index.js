@@ -15,5 +15,7 @@ function submitItem() {
     li.textContent = taskItem;
 
     document.querySelector('#tasks').appendChild(li);
+
+    form.reset();
   })
 }
