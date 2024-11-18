@@ -22,6 +22,20 @@ function submitItem() {
     deleteBtn.textContent = 'X';
     li.appendChild(deleteBtn);
 
+    //create priority dropdown
+    let formElement = document.createElement('form');
+    formElement.id = 'priority-list';
+    let priorityCode = `
+      <label for="priority"> Priority Level:</label>
+      <select name="priority">
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+    `;
+    formElement.innerHTML = priorityCode;
+    li.appendChild(formElement)
+
     //append item to page
     document.querySelector('#tasks').appendChild(li);
 
