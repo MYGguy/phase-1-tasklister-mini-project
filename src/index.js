@@ -28,9 +28,9 @@ function submitItem() {
     let priorityCode = `
       <label for="priority"> Priority Level:</label>
       <select name="priority">
-        <option value="high">High</option>
-        <option value="medium">Medium</option>
-        <option value="low">Low</option>
+        <option value="high" id="high-prio">High</option>
+        <option value="medium" class="medium-prio">Medium</option>
+        <option value="low" class="low-prio">Low</option>
       </select>
     `;
     formElement.innerHTML = priorityCode;
@@ -39,6 +39,9 @@ function submitItem() {
     //append item to page
     document.querySelector('#tasks').appendChild(li);
 
+    //run priority-color-coder
+    colorCode();
+
     form.reset();
   })
 }
@@ -46,3 +49,28 @@ function submitItem() {
 function handleDelete(e) {
   e.target.parentNode.remove();
 }
+
+document.querySelector('option').addEventListener('click', colorCode);
+
+function colorCode() {
+
+  let highHigh = document.getElementById('high-prio');
+  let lowLow = document.getElementsByClassName('low-prio');
+  // let lists = document.querySelectorAll('#list');
+
+  if (document.querySelectorAll('option').id = 'high-prio') {
+    document.getElementById('high-prio').parentNode.parentNode.parentNode.parentNode.style.setProperty('background-color', '#64e3a1');
+  }
+}
+
+// document.querySelector('#high-prio').parentNode.style.setProperty('background-color', 'green');
+
+// document.getElementById('new-task-description').style.setProperty('backgroundColor', 'green');
+
+// document.querySelector('h2').style.setProperty('color', 'blue');
+
+// document.getElementById('list').style.setProperty('color', 'red')
+
+// document.getElementById('list').parentNode.parentNode.style.setProperty('backgroundColor', 'green')
+
+// document.querySelector('#list')['name'].style.setProperty('color', 'green')
